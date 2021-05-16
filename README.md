@@ -53,3 +53,7 @@ Caso seja necessário gerar chave para o projeto, com o projeto em execução, a
 ```
 http://localhost:NUMERO_DA_PORTA/gerarchave
 ```
+
+Baseado na sequência de vídeos disponível em (acessados entre 14 e 16/05/2021):
+https://www.youtube.com/watch?v=jHzobAEDQww&list=PL8Bwzyk4WxBPizb-2-66XJLrHDZ8MCiv4&index=1
+
