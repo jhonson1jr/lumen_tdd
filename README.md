@@ -1,24 +1,55 @@
-# Lumen PHP Framework
+# Projeto APIs com Lumen Framework e TDD com PHPUnit
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+## Conhecimentos necessários:
+PHP, Laravel, Orientação a Objeto, SQL
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Tecnologias:
 
-## Official Documentation
+Composer, MySQL, Php 7, Lumen
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+## Instruções
 
-## Contributing
+Baixar o projeto;
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Executar dentro do prompt de comando dentro do diretório raiz do projeto:
+```
+composer update
+```
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Criar uma base de dados no MySQL e criar um arquivo .env seguindo o .env.example, alterando os dados de conexao à base e de e-mail
 
-## License
+```php
+DB_CONNECTION=mysql
+DB_HOST=<seu host>
+DB_PORT=3306
+DB_DATABASE=<sua database>
+DB_USERNAME=<seu usuário>
+DB_PASSWORD=<sua senha>
+```
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Abrir console dentro do diretório raiz da aplicação e executar as Migrations:
+```
+./artisan migrate
+```
+
+
+Criando um atalho para a execução do comando phpunit que processa os testes -> abrir console dentro do diretório raiz da aplicação e executar:
+```
+alias testar='vendor/phpunit/phpunit/phpunit'
+```
+No arquivo bootstrap/app.php, se necessário, descomentar a linha 26 e 28:
+```
+$app->withFacades();
+$app->withEloquent();
+```
+
+Para acessar as rotas pelo navegador, executar no prompt de comando dentro do diretório raiz, substituindo NUMERO_DA_PORTA por exemplo por 8001:
+```
+php -S localhost:NUMERO_DA_PORTA
+```
+
+Caso seja necessário gerar chave para o projeto, com o projeto em execução, acessar a rota abaixo e colocar o resultado dentro do arquivo .env:
+```
+http://localhost:NUMERO_DA_PORTA/gerarchave
+```
