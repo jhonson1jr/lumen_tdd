@@ -18,3 +18,4 @@ $router->get('/', function () use ($router) {
 });
 
 $router->post('/api/salvarusuario', 'UsuariosController@salvarUsuario');
+$router->get('/api/detalhesusuario/{id_usuario}', 'UsuariosController@detalhesUsuario');
