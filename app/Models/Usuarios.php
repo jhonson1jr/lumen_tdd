@@ -21,7 +21,7 @@ class Usuarios extends Model
     protected $table = 'usuarios';
 
     protected $fillable = [
-        'nome', 'email'
+        'nome', 'email', 'password'
     ];
 
     public $timestamps = true; 
